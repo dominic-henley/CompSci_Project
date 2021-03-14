@@ -1,0 +1,60 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "1.8.0_202-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {comp scrollPane1::::437:x, space :::p, comp editButton:::p:94:p, space :::p}}"
+			"$verticalGroup": "par l {comp scrollPane1::l::404:x, seq l {space :::p, comp editButton:::p::p, space ::368:x}}"
+		} ) {
+			name: "this"
+			"title": "Lealo Database"
+			"$sizePolicy": 1
+			"resizable": false
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/resources/lealoimage.jpg" )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "clothesTable"
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 9
+					}
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "editButton"
+				"text": "Edit..."
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "editButtonActionPerformed", true ) )
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "clothesMenuBar"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "clothesMenu"
+					"text": "Clothes"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "addClothes"
+						"text": "Add..."
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addClothesActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "removeClothes"
+						"text": "Remove..."
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "removeClothesActionListener", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "financeMenuBar"
+					"text": "Finance"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "viewFinance"
+						"text": "View Estimated Revenue..."
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "viewFinanceEventHandler", true ) )
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 545, 450 )
+		} )
+	}
+}
